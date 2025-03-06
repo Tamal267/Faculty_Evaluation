@@ -59,6 +59,7 @@ dotenv.config({ path: '.env.local' })
       .getByRole('textbox', { name: 'Recommendations' })
       .fill('I have no recommendations')
     await page.getByRole('button', { name: 'Submit' }).click()
+    console.log('Evaluation done')
   }
 
   await browser.close()
