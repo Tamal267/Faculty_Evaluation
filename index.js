@@ -3,7 +3,9 @@ import { chromium } from 'playwright-extra'
 
 dotenv.config({ path: '.env.local' })
 ;(async () => {
-  const browser = await chromium.launch()
+  const browser = await chromium.launch({
+    channel: 'chrome',
+  })
   const page = await browser.newPage()
   await page.goto('https://student.mist.ac.bd/login')
   await page.getByRole('textbox', { name: 'Username' }).dblclick()
